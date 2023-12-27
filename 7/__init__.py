@@ -74,4 +74,24 @@ def add_person(people):
 
 def show_people(people):
     print("People in the registry:")
-    return
+    for person in people:
+        print(person.get_info())
+    print()
+
+    def main():
+        people = []
+        while True:
+            print("==== Console Registry ====")
+            print("1. Add person")
+            print("2. Show all people")
+            print("3. Quit")
+            choice = input("Enter your choice: ")
+
+            if choice == "1":
+                pass
+            elif choice == "2":
+                pass
+            elif choice == "3":
+                pass
+            else:
+                pass

@@ -88,10 +88,10 @@ def show_people(people):
             choice = input("Enter your choice: ")
 
             if choice == "1":
-                pass
+                add_person(people)
             elif choice == "2":
-                pass
+                show_people(people)
             elif choice == "3":
-                pass
+                break
             else:
-                pass
+                print("Invalid choice! Please try again.\n")

@@ -78,20 +78,25 @@ def show_people(people):
         print(person.get_info())
     print()
 
-    def main():
-        people = []
-        while True:
-            print("==== Console Registry ====")
-            print("1. Add person")
-            print("2. Show all people")
-            print("3. Quit")
-            choice = input("Enter your choice: ")
 
-            if choice == "1":
-                add_person(people)
-            elif choice == "2":
-                show_people(people)
-            elif choice == "3":
-                break
-            else:
-                print("Invalid choice! Please try again.\n")
+def main():
+    people = []
+    while True:
+        print("==== Console Registry ====")
+        print("1. Add person")
+        print("2. Show all people")
+        print("3. Quit")
+        choice = input("Enter your choice: ")
+
+        if choice == "1":
+            add_person(people)
+        elif choice == "2":
+            show_people(people)
+        elif choice == "3":
+            break
+        else:
+            print("Invalid choice! Please try again.\n")
+
+
+if __name__ == "__main__":
+    main()

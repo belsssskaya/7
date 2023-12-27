@@ -1,34 +1,44 @@
 class Human:
-    def __init__(self):
-        return
-
+    def __init__(self, name, age, gender):
+        self.name = name
+        self.age = age
+        self.gender = gender
 
     def get_name(self):
-        return
+        return self.name
 
     def change_gender(self, new_gender):
-        pass
+        self.gender = new_gender
 
 class Student(Human):
     def __init__(self, name, age, gender, university, faculty, course):
-       pass
+        super().__init__(name, age, gender)
+        self.university = university
+        self.faculty = faculty
+        self.course = course
 
     def get_info(self):
-        return
+        return f"Student: {self.name}, {self.age} years old, studying at {self.university}, {self.faculty}, {self.course} course."
 
 class Teacher(Human):
     def __init__(self, name, age, gender, university, faculty, subjects):
-        return
+        super().__init__(name, age, gender)
+        self.university = university
+        self.faculty = faculty
+        self.subjects = subjects
 
     def get_info(self):
-        return
+        return f"Teacher: {self.name}, {self.age} years old, working at {self.university}, {self.faculty}, teaching {', '.join(self.subjects)}."
 
 class DepartmentChair(Human):
     def __init__(self, name, age, gender, university, faculty, teachers):
-        return
+        super().__init__(name, age, gender)
+        self.university = university
+        self.faculty = faculty
+        self.teachers = teachers
 
     def get_info(self):
-        return
+        return f"Department Chair: {self.name}, {self.age} years old, working at {self.university}, {self.faculty}."
 
 def add_person(people):
     print("Adding a new person:")

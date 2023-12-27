@@ -1,52 +1,55 @@
+#родительский класс
 class Human:
+ #инициализация атрибутов класса
     def __init__(self, name, age, gender):
         self.name = name
         self.age = age
         self.gender = gender
-
+#получение имени
     def get_name(self):
         return self.name
-
+#измнение возраста
     def change_gender(self, new_gender):
         self.gender = new_gender
 
+#дочерний класс
 class Student(Human):
     def __init__(self, name, age, gender, university, faculty, course):
         super().__init__(name, age, gender)
         self.university = university
         self.faculty = faculty
         self.course = course
-
+#получаем всю информацию
     def get_info(self):
         return f"Student: {self.name}, {self.age} years old, studying at {self.university}, {self.faculty}, {self.course} course."
-
+#дочерний класс
 class Teacher(Human):
     def __init__(self, name, age, gender, university, faculty, subjects):
         super().__init__(name, age, gender)
         self.university = university
         self.faculty = faculty
         self.subjects = subjects
-
+#получение информации
     def get_info(self):
         return f"Teacher: {self.name}, {self.age} years old, working at {self.university}, {self.faculty}, teaching {', '.join(self.subjects)}."
-
+#дочерний класс
 class DepartmentChair(Human):
     def __init__(self, name, age, gender, university, faculty, teachers):
         super().__init__(name, age, gender)
         self.university = university
         self.faculty = faculty
         self.teachers = teachers
-
+#получение информации
     def get_info(self):
         return f"Department Chair: {self.name}, {self.age} years old, working at {self.university}, {self.faculty}."
-
+#вводим информацию о человеке
 def add_person(people):
     print("Adding a new person:")
     name = input("Enter name: ")
     age = int(input("Enter age: "))
     gender = input("Enter gender: ")
     role = input("Enter role (student/teacher/department chair): ")
-
+#родолжаем вводить в зависимости от роли
     if role == "student":
         university = input("Enter university: ")
         faculty = input("Enter faculty: ")
@@ -71,7 +74,7 @@ def add_person(people):
     people.append(person)
     print("Person added successfully!\n")
 
-
+#функция вывода всех людей
 def show_people(people):
     print("People in the registry:")
     for person in people:
